@@ -1,0 +1,12 @@
+<aura:component description="ContactSearchForm" >
+	<aura:attribute name="searchText" type="String" />
+	<aura:attribute name="handleKeyup" type="Aura.Action" />
+
+	<div class="slds-grid slds-wrap slds-grid_align-center slds-grid_vertical-align-center">
+
+		<div class="slds-size_1-of-4 slds-p-horizontal_xx-small">
+			<ui:inputText class="slds-input" value="{!v.searchText}" updateOn="keyup" keyup="{!v.handleKeyup}" placeholder="Search by Contact Name..."/>
+		</div>
+	</div>
+
+</aura:component>

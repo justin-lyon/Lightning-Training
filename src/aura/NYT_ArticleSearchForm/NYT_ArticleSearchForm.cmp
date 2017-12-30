@@ -1,0 +1,13 @@
+<aura:component description="NYT_ArticleSearchForm">
+	<aura:attribute name="searchText" type="String" />
+	<aura:attribute name="clickSubmit" type="Aura.Action" />
+
+	<div class="slds-grid slds-wrap slds-grid_align-center slds-grid_vertical-align-center">
+		<div class="slds-size_1-of-4 slds-p-horizontal_xx-small">
+			<ui:inputText value="{!v.searchText}" placeholder="Search by article body, headline, and byline..." />
+		</div>
+		<div class="slds-size_1-of-4 slds-p-horizontal_xx-small">
+			<ui:button class="slds-button slds-button_brand" label="Submit" press="{!v.clickSubmit}" />
+		</div>
+	</div>
+</aura:component>

@@ -1,0 +1,19 @@
+<aura:component description="NYT_ArticleSearchContainer" access="global" implements="flexipage:availableForAllPageTypes" extends="c:NYT_ArticleSearchAPI" >
+	<ltng:require scripts="{!join(',',
+		$Resource.lightningKit + '/lightning-kit/js/acumen-toaster.js')}"/>
+
+	<aura:attribute name="searchText" type="String" />
+	<aura:attribute name="articles" type="Object[]" />
+	<aura:attribute name="articleMeta" type="Object" default="{}" />
+
+	<aura:handler name="change" value="{!v.data}" action="{!c.dataChange}" />
+
+	<c:NYT_ArticleSearchForm searchText="{!v.searchText}" clickSubmit="{!c.clickSubmit}" />
+
+	<aura:if isTrue="{!v.articles.length > 0}">
+		<div class="slds-p-top_large">
+			<c:NYT_ArticleGrid articles="{!v.articles}" articleMeta="{!v.articleMeta}" />
+		</div>
+	</aura:if>
+
+</aura:component>

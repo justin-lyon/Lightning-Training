@@ -1,0 +1,32 @@
+<aura:component description="ContactTable" >
+	<aura:attribute name="contacts" type="Contact[]" />
+
+	<div class="slds-p-horizontal_x-small" >
+		<table class="slds-table slds-table_bordered slds-table_fixed-layout">
+			<thead>
+				<tr class="slds-text-title_caps">
+					<th scope="col" class="slds-theme_info">
+						<div class="slds-truncate">Name</div>
+					</th>
+					<th scope="col" class="slds-theme_info">
+						<div class="slds-truncate">Title</div>
+					</th>
+					<th scope="col" class="slds-theme_info">
+						<div class="slds-truncate">Phone</div>
+					</th>
+					<th scope="col" class="slds-theme_info">
+						<div class="slds-truncate">Email</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<aura:iteration items="{!v.contacts}" var="contact">
+					<c:ContactRow contact="{!contact}" />
+				</aura:iteration>
+
+			</tbody>
+		</table>
+	</div>
+
+</aura:component>

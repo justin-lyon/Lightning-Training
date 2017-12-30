@@ -1,0 +1,21 @@
+<aura:component description="AccountSummary" >
+	<aura:attribute name="account" type="Account" />
+
+	<div class="slds-grid slds-wrap slds-p-horizontal_small" >
+		<div class="slds-size_1-of-4 slds-text-color_weak">Type</div>
+		<div class="slds-size_3-of-4">
+			<ui:outputText value="{!v.account.Type}" />
+		</div>
+
+		<div class="slds-size_1-of-4 slds-text-color_weak">Phone</div>
+		<div class="slds-size_3-of-4">
+			<ui:outputText value="{!v.account.Phone}" />
+		</div>
+
+		<div class="slds-size_1-of-4 slds-text-color_weak">Address</div>
+		<div class="slds-size_1-of-1 slds-p-left_xx-small">
+			<ui:outputText value="{!v.account.BillingAddress.street}" />
+		</div>
+
+	</div>
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component description="ContactSearchContainer"
+	access="global"
+	implements="flexipage:availableForAllPageTypes"
+	controller="ContactSearchAuraService" >
+
+	<ltng:require scripts="{!$Resource.lightningKit + '/lightning-kit/js/acumen-toaster.js'}"/>
+
+	<aura:attribute name="searchText" type="String" default="" />
+	<aura:attribute name="contacts" type="Contact[]" />
+
+	<c:ContactSearchForm searchText="{!v.searchText}" handleKeyup="{!c.onKeyUp}" />
+
+	<aura:if isTrue="{!v.contacts.length != 0}">
+		<c:ContactSearchResults contacts="{!v.contacts}" />
+	</aura:if>
+</aura:component>

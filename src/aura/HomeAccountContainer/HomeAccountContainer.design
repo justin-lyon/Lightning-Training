@@ -1,0 +1,6 @@
+<design:component >
+	<design:attribute name="limitter" label="Limit" description="Limit the number of Accounts displayed" />
+    <sfdc:objects >
+    	<sfdc:object >Account</sfdc:object>
+    </sfdc:objects>
+</design:component>

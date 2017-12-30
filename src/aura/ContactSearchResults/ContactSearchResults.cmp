@@ -1,0 +1,13 @@
+<aura:component >
+	<aura:attribute name="contacts" type="Contact[]" />
+
+	<div class="slds-grid slds-wrap slds-grid_align-center slds-p-top_medium">
+		<div class="slds-size_2-of-3">
+			<fieldset class="slds-border_top slds-p-top_medium">
+				<legend class="slds-text-color_weak">Contacts</legend>
+				<c:ContactTable contacts="{!v.contacts}" />
+			</fieldset>
+		</div>
+	</div>
+
+</aura:component>

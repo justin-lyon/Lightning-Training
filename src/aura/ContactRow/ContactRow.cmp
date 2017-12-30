@@ -1,0 +1,32 @@
+<aura:component description="ContactRow" >
+	<aura:attribute name="contact" type="Contact" />
+
+	<tr>
+		<th scope="row" data-label="Name">
+			<c:NavigateSObjectLink recordId="{!v.contact.Id}" >
+				<aura:set attribute="content">
+					<div title="{!v.contact.Name}">
+						<ui:outputText value="{!v.contact.Name}" />
+					</div>
+				</aura:set>
+			</c:NavigateSObjectLink>
+		</th>
+
+		<td data-label="Title">
+			<div class="slds-truncate" title="{!v.contact.Title}" >
+				<ui:outputText value="{!v.contact.Title}" />
+			</div>
+		</td>
+		<td data-label="Phone">
+			<div class="slds-truncate" title="{!v.contact.Phone}" >
+				<ui:outputText value="{!v.contact.Phone}" />
+			</div>
+		</td>
+		<td data-label="Email">
+			<div class="slds-truncate" title="{!v.contact.Email}" >
+				<ui:outputText value="{!v.contact.Email}" />
+			</div>
+		</td>
+	</tr>
+
+</aura:component>

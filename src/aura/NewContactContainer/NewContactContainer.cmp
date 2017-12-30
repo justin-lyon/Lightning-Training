@@ -1,0 +1,14 @@
+<aura:component description="NewContactContainer"
+	implements="lightning:actionOverride,force:hasRecordId,force:hasSObjectName,force:lightningQuickAction"
+	access="global"
+	controller="NewContactAuraService">
+
+	<ltng:require scripts="{!join(',',
+		$Resource.lightningKit + '/lightning-kit/js/acumen-toaster.js')}" />
+
+	<aura:attribute name="contact" type="Contact" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+	<c:NewContactForm contact="{!v.contact}" saveContact="{!c.saveContact}" />
+</aura:component>

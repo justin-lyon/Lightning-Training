@@ -1,0 +1,16 @@
+<aura:component description="NYT_ArticleGrid">
+	<aura:attribute name="articles" type="Array" />
+	<aura:attribute name="articleMeta" type="Object" />
+
+	<fieldset class="slds-border_top slds-p-around_small">
+		<legend>Articles</legend>
+		<div class="slds-grid slds-wrap slds-grid_pull-padded" >
+		<aura:iteration items="{!v.articles}" var="article" >
+			<div class="slds-size_1-of-2 slds-p-around_xx-small" >
+				<c:NYT_ArticleCard article="{!article}" />
+			</div>
+		</aura:iteration>
+	</div>
+	</fieldset>
+
+</aura:component>

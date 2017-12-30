@@ -1,0 +1,24 @@
+<aura:component description="AccountCard" >
+	<aura:attribute name="account" type="Account" />
+	<aura:attribute name="content" type="Aura.Component[]" />
+
+	<lightning:card iconName="standard:account">
+		<aura:set attribute="title">
+			<c:NavigateSObjectLink recordId="{!v.account.Id}">
+				<aura:set attribute="content">
+					<lightning:badge label="{!v.account.Name}" />
+				</aura:set>
+			</c:NavigateSObjectLink>
+		</aura:set>
+
+		{!v.content}
+
+		<aura:set attribute="footer">
+			<c:NavigateSObjectLink recordId="{!v.account.OwnerId}">
+				<aura:set attribute="content">
+					<ui:outputText value="{!v.account.Owner.Name}" />
+				</aura:set>
+			</c:NavigateSObjectLink>
+		</aura:set>
+	</lightning:card>
+</aura:component>

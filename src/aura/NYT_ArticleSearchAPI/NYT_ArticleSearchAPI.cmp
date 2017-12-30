@@ -1,0 +1,5 @@
+<aura:component description="NYT_ArticleSearchAPI" extensible="true" abstract="true" controller="NYT_ArticleSearchAuraService">
+	<ltng:require scripts="{!$Resource.lightningKit + '/lightning-kit/js/acumen-toaster.js'}"/>
+	<aura:attribute name="data" type="Object" default="{}" />
+	{!v.body}
+</aura:component>

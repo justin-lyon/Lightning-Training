@@ -1,0 +1,15 @@
+<aura:component description="RelatedContactsContainer" access="global" implements="flexipage:availableForAllPageTypes" controller="RelatedContactsAuraService" >
+	<aura:attribute name="account" type="Account" />
+	<aura:attribute name="contacts" type="Contact[]" />
+
+	<aura:handler event="c:SelectedAccount" action="{!c.handleSelectedAccount}" />
+
+	<div class="slds-p-around_small">
+		<c:AccountCard account="{!v.account}">
+			<aura:set attribute="content">
+				<c:ContactTable contacts="{!v.contacts}" />
+			</aura:set>
+		</c:AccountCard>
+	</div>
+
+</aura:component>

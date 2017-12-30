@@ -1,0 +1,33 @@
+<aura:component description="NYT_ArticleCard" >
+	<ltng:require scripts="{!join(',',
+		$Resource.lightningKit + '/lightning-kit/js/acumen-navigator.js')}"/>
+
+	<aura:attribute name="article" type="Object" />
+
+	<lightning:card iconName="standard:article">
+		<aura:set attribute="title">
+			<a onclick="{!c.clickArticle}">
+				<lightning:badge label="{!v.article.headline.main}" />
+			</a>
+		</aura:set>
+
+		<div class="slds-p-left_large">
+			<div class="slds-grid slds-wrap">
+				<div class="slds-size_1-of-6">
+					<img src="{!'https://nytimes.com/' + v.article.multimedia[2].url}" alt="{!v.article.headline.main + ' thumbnail'}"/>
+				</div>
+				<div class="slds-size_5-of-6 slds-p-left_xx-small">
+					<p><ui:outputText value="{!v.article.snippet}" /></p>
+					<p class="slds-p-top_xx-small">
+						<span class="slds-text-color_weak">Source </span><ui:outputText value="{!v.article.source}" />
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<aura:set attribute="footer">
+			<p><ui:outputText value="{!v.article.byline.original}" /></p>
+			<p><span class="slds-text-color_weak">Word Count </span><ui:outputText value="{!v.article.word_count}" /></p>
+		</aura:set>
+	</lightning:card>
+</aura:component>

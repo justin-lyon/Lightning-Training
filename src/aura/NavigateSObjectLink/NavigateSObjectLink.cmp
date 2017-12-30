@@ -1,0 +1,10 @@
+<aura:component description="NavigateSObjectLink" >
+	<ltng:require scripts="{!join(',',
+		$Resource.lightningKit + '/lightning-kit/js/acumen-navigator.js')}" />
+	<aura:attribute name="recordId" type="Id" />
+	<aura:attribute name="content" type="Aura.Component[]" />
+
+	<a onclick="{!c.clickLink}">
+		{!v.content}
+	</a>
+</aura:component>

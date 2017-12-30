@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Carries a selected Account record" >
+	<aura:attribute name="account" type="Account" />
+</aura:event>
